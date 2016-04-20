@@ -1,5 +1,7 @@
 # Trapezoidal-Matlab
 %%%%%%%%%%%%%%Trapezoid%%%%%%%%%%%%%%%%%%
+
+
 clear all
 h = .002;
 T = 0:h:.5;
@@ -35,3 +37,12 @@ plot(T,Z,'--p'); hold on
 y = (1 + exp((-100*T))).^(1/2);
 plot(T,y, 'r')
 legend( 'Approx','Exact')
+end
+
+function  f = my_rhs(t,z)
+
+f = 50/z -50*z;
+function dz = df_dz(t,z)
+
+dz = 50/z^2 + 50 ;
+end
